@@ -1,0 +1,14 @@
+ervices:
+  samba:
+    image: dockurr/samba
+    container_name: samba
+    environment:
+      NAME: "smb"
+      USER: "smb"
+      PASS: "password"
+    ports:
+      - 445:445
+    volumes:
+      - ./samba:/storage
+      - ./smb.conf:/etc/samba/smb.conf
+    restart: always
